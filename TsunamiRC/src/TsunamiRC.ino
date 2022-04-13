@@ -1,9 +1,6 @@
 #include <Ps3Controller.h>
 #include <analogWrite.h>
 
-int player = 0;
-int battery = 0;
-
 #define pwmB 18
 #define b1 26
 #define b2 19
@@ -12,24 +9,6 @@ int battery = 0;
 #define a2 1
 #define pwmA 23
 #define LED 2
-bool direc = true;
-
-// void notify()
-//{
-//     //---------------------- Battery events ---------------------
-//     if (battery != Ps3.data.status.battery)
-//     {
-//         battery = Ps3.data.status.battery;
-//         // Serial.print("The controller battery is ");
-//         if (battery == ps3_status_battery_charging)              // Serial.println("charging");
-//             else if (battery == ps3_status_battery_full)         // Serial.println("FULL");
-//                 else if (battery == ps3_status_battery_high)     // Serial.println("HIGH");
-//                 else if (battery == ps3_status_battery_low)      // Serial.println("LOW");
-//                 else if (battery == ps3_status_battery_dying)    // Serial.println("DYING");
-//                 else if (battery == ps3_status_battery_shutdown) // Serial.println("SHUTDOWN");
-//                 else                                             // Serial.println("UNDEFINED");
-//     }
-// }
 
 void onConnect()
 {
@@ -96,7 +75,6 @@ void setup()
     pinMode(LED, OUTPUT);
     digitalWrite(stby, 1);
 
-    // Ps3.attach(notify);
     Ps3.attachOnConnect(onConnect);
     Ps3.attachOnDisconnect(onDisconnect);
     Ps3.begin("40:F5:20:80:BF:4C");
