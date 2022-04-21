@@ -32,8 +32,8 @@ void tras(uint32_t pa, uint32_t pb)
     digitalWrite(b2, 0);
     digitalWrite(a1, 1);
     digitalWrite(a2, 0);
-    analogWrite(pwmB, pb);
-    analogWrite(pwmA, pa);
+    analogWrite(pwmB, pb, 255);
+    analogWrite(pwmA, pa, 255);
 }
 void frente(uint32_t pa, uint32_t pb)
 {
@@ -41,8 +41,8 @@ void frente(uint32_t pa, uint32_t pb)
     digitalWrite(b2, 1);
     digitalWrite(a1, 0);
     digitalWrite(a2, 1);
-    analogWrite(pwmB, pb);
-    analogWrite(pwmA, pa);
+    analogWrite(pwmB, pb, 255);
+    analogWrite(pwmA, pa, 255);
 }
 void direita(uint32_t pa, uint32_t pb)
 {
@@ -50,8 +50,8 @@ void direita(uint32_t pa, uint32_t pb)
     digitalWrite(b2, 1);
     digitalWrite(a1, 1);
     digitalWrite(a2, 0);
-    analogWrite(pwmB, pb);
-    analogWrite(pwmA, pa);
+    analogWrite(pwmB, pb, 255);
+    analogWrite(pwmA, pa, 255);
 }
 void esquerda(uint32_t pa, uint32_t pb)
 {
@@ -59,8 +59,8 @@ void esquerda(uint32_t pa, uint32_t pb)
     digitalWrite(b2, 0);
     digitalWrite(a1, 0);
     digitalWrite(a2, 1);
-    analogWrite(pwmB, pb);
-    analogWrite(pwmA, pa);
+    analogWrite(pwmB, pb, 255);
+    analogWrite(pwmA, pa, 255);
 }
 
 void setup()
@@ -133,6 +133,24 @@ void loop()
                 if (Ps3.event.button_up.cross)
                     break;
             }
+        }
+        if (Ps3.event.button_down.circle > 0)
+        {
+            direita(255, 255);
+            delay(100);
+            frente(255, 180);
+            delay(500);
+            esquerda(255, 255);
+            delay(150);
+        }
+        else if (Ps3.event.button_down.square > 0)
+        {
+            esquerda(255, 255);
+            delay(100);
+            frente(180, 255);
+            delay(500);
+            direita(255, 255);
+            delay(150);
         }
         frente(0, 0);
     }
