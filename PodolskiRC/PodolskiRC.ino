@@ -24,6 +24,9 @@ char SentidoD = 'F';
 float VelocidadeE = 0;
 float VelocidadeD = 0;
 
+bool L2 = false;
+bool R2 = false;
+
 void notify() {
 	//---------------------- Battery events ---------------------
 	if( battery != Ps3.data.status.battery ){
@@ -58,7 +61,7 @@ void setup() {
 
 	Ps3.attach(notify);
 	Ps3.attachOnConnect(onConnect);
-	Ps3.begin("34:86:5D:3A:34:38");
+	Ps3.begin("40:F5:20:80:BF:4C");
 
 	Serial.println("Ready.");
 }
@@ -122,11 +125,24 @@ void loop() {
 		}
 	}else{
 
-		if(Ps3.event.button_down.r2){
+		if(abs(Ps3.event.button_down.r2) > 0){
+			R2 = true;
+		}
 
-			SentidoE = 'F';
-			SentidoD = 'F';
+		if(abs(Ps3.event.button_up.r2) > 0){
+			R2 = false;
+		}
 
+		if(abs(Ps3.event.button_down.l2) > 0){
+			L2 = true;
+		}
+
+		if(abs(Ps3.event.button_up.l2) > 0){
+			L2 = false;
+		}
+
+
+		if(R2){
 			if(Ps3.data.analog.stick.lx <= -50){
 				VelocidadeE*= 0.5;
 				VelocidadeD*= 2;
@@ -135,7 +151,7 @@ void loop() {
 				VelocidadeD*= 0.5;
 			}
 
-		}else if(Ps3.event.button_down.l2){
+		}else if(L2){
 
 			SentidoE = 'T';
 			SentidoD = 'T';
