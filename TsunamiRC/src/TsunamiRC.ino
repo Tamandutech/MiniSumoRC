@@ -88,7 +88,7 @@ void loop()
         {
             while (true)
             {
-                esquerda(180, 180);
+                esquerda(140, 140);
                 delay(1);
                 if (Ps3.event.button_down.r2 || Ps3.event.button_down.l2 || Ps3.event.button_down.cross || (Ps3.data.analog.stick.lx < 50 && Ps3.data.analog.stick.lx > -50))
                     break;
@@ -98,7 +98,7 @@ void loop()
         {
             while (true)
             {
-                direita(180, 180);
+                direita(140, 140);
                 delay(1);
                 if (Ps3.event.button_down.r2 || Ps3.event.button_down.l2 || Ps3.event.button_down.cross || (Ps3.data.analog.stick.lx < 50 && Ps3.data.analog.stick.lx > -50))
                     break;
@@ -137,8 +137,8 @@ void loop()
         if (Ps3.event.button_down.circle > 0)
         {
             direita(255, 255);
-            delay(100);
-            frente(255, 180);
+            delay(90);
+            frente(255, 160);
             delay(500);
             esquerda(255, 255);
             delay(150);
@@ -146,8 +146,8 @@ void loop()
         else if (Ps3.event.button_down.square > 0)
         {
             esquerda(255, 255);
-            delay(100);
-            frente(180, 255);
+            delay(90);
+            frente(160, 255);
             delay(500);
             direita(255, 255);
             delay(150);
