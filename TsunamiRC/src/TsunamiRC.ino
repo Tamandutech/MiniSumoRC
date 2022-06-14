@@ -1,11 +1,11 @@
 #include <Ps3Controller.h>
 #include <analogWrite.h>
 
-#define pwmB 18
-#define b1 26
-#define b2 19
-#define stby 3
-#define a1 5
+#define pwmB 17
+#define b1 5
+#define b2 18
+#define stby 19
+#define a1 3
 #define a2 1
 #define pwmA 23
 #define LED 2
