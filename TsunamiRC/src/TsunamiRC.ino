@@ -77,7 +77,7 @@ void setup()
 
     Ps3.attachOnConnect(onConnect);
     Ps3.attachOnDisconnect(onDisconnect);
-    Ps3.begin("40:F5:20:80:BF:4C");
+    Ps3.begin("34:86:5D:3A:34:38");
 }
 
 void loop()
