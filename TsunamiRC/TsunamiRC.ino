@@ -26,41 +26,41 @@ void onDisconnect()
     digitalWrite(LED, HIGH);
 }
 
-void tras(uint32_t pa, uint32_t pb)
+void tras(int pa, int pb)
 {
-    digitalWrite(b1, 1);
-    digitalWrite(b2, 0);
-    digitalWrite(a1, 1);
-    digitalWrite(a2, 0);
-    analogWrite(pwmB, pb, 255);
-    analogWrite(pwmA, pa, 255);
+    analogWrite(b1, pb);
+    analogWrite(b2, 0);
+    analogWrite(a1, pa);
+    analogWrite(a2, 0);
+    // analogWrite(pwmB, pb, 255);
+    // analogWrite(pwmA, pa, 255);
 }
-void frente(uint32_t pa, uint32_t pb)
+void frente(int pa, int pb)
 {
-    digitalWrite(b1, 0);
-    digitalWrite(b2, 1);
-    digitalWrite(a1, 0);
-    digitalWrite(a2, 1);
-    analogWrite(pwmB, pb, 255);
-    analogWrite(pwmA, pa, 255);
+    analogWrite(b1, 0);
+    analogWrite(b2, pb);
+    analogWrite(a1, 0);
+    analogWrite(a2, pa);
+    // analogWrite(pwmB, pb, 255);
+    // analogWrite(pwmA, pa, 255);
 }
-void direita(uint32_t pa, uint32_t pb)
+void direita(int pa, int pb)
 {
-    digitalWrite(b1, 0);
-    digitalWrite(b2, 1);
-    digitalWrite(a1, 1);
-    digitalWrite(a2, 0);
-    analogWrite(pwmB, pb, 255);
-    analogWrite(pwmA, pa, 255);
+    analogWrite(b1, 0);
+    analogWrite(b2, pb);
+    analogWrite(a1, pa);
+    analogWrite(a2, 0);
+    // analogWrite(pwmB, pb, 255);
+    // analogWrite(pwmA, pa, 255);
 }
-void esquerda(uint32_t pa, uint32_t pb)
+void esquerda(int pa, int pb)
 {
-    digitalWrite(b1, 1);
-    digitalWrite(b2, 0);
-    digitalWrite(a1, 0);
-    digitalWrite(a2, 1);
-    analogWrite(pwmB, pb, 255);
-    analogWrite(pwmA, pa, 255);
+    analogWrite(b1, pb);
+    analogWrite(b2, 0);
+    analogWrite(a1, 0);
+    analogWrite(a2, pa);
+    // analogWrite(pwmB, pb, 255);
+    // analogWrite(pwmA, pa, 255);
 }
 
 void setup()
@@ -77,7 +77,7 @@ void setup()
 
     Ps3.attachOnConnect(onConnect);
     Ps3.attachOnDisconnect(onDisconnect);
-    Ps3.begin("34:86:5D:3A:34:38");
+    Ps3.begin("B8:D6:1A:AA:52:5C");
 }
 
 void loop()
