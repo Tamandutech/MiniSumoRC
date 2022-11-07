@@ -1,12 +1,12 @@
 #include <Ps3Controller.h>
 #include <analogWrite.h>
 
-#define pwmB 34
-#define b1 35
-#define b2 32
-#define a1 33
-#define a2 25
-#define pwmA 26
+#define pwmB 32
+#define b1 33
+#define b2 25
+#define a1 26
+#define a2 27
+#define pwmA 14
 #define LED 2
 
 void onConnect()
