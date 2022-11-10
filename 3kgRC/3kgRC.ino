@@ -2,10 +2,10 @@
 #include <analogWrite.h>
 
 #define pwmB 32
-#define b1 33
-#define b2 25
-#define a1 26
-#define a2 27
+#define b1 25
+#define b2 33
+#define a1 27
+#define a2 26
 #define pwmA 14
 #define LED 2
 
@@ -85,7 +85,7 @@ void loop()
         {
             while (true)
             {
-                esquerda(140, 140);
+                esquerda(255, 255);
                 delay(1);
                 if (Ps3.event.button_down.r2 || Ps3.event.button_down.l2 || Ps3.event.button_down.cross || (Ps3.data.analog.stick.lx < 50 && Ps3.data.analog.stick.lx > -50))
                     break;
@@ -95,7 +95,7 @@ void loop()
         {
             while (true)
             {
-                direita(140, 140);
+                direita(255, 255);
                 delay(1);
                 if (Ps3.event.button_down.r2 || Ps3.event.button_down.l2 || Ps3.event.button_down.cross || (Ps3.data.analog.stick.lx < 50 && Ps3.data.analog.stick.lx > -50))
                     break;
@@ -105,7 +105,7 @@ void loop()
         {
             while (true)
             {
-                frente(180, 180);
+                frente(255, 255);
                 delay(1);
                 if (Ps3.event.button_up.r2)
                     break;
@@ -115,7 +115,7 @@ void loop()
         {
             while (true)
             {
-                tras(180, 180);
+                tras(255, 255);
                 delay(1);
                 if (Ps3.event.button_up.l2)
                     break;
