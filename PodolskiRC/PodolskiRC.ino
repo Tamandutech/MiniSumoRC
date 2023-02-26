@@ -1,22 +1,20 @@
+
 #include <Ps3Controller.h>
-#include <analogWrite.h>
+//#include <analogWrite.h>
 
 int player = 0;
 int battery = 0;
 
-#define sharpD 34 //Direito
-#define sharpF 35 //Frontal
-#define sharpE 32 //Esquerdo
+#define pwmB 4
+#define b1 18
+#define b2 19
+#define stby 5
+#define a1 16
+#define a2 17
+#define pwmA 23
 
-#define pwmB 18 //pwmB
-#define b1 26  //Bin
-#define b2 19 //Bin
-
-#define a1 5  //Ain
-#define a2 1  //Ain
-#define pwmA 23 //pwmA
-
-#define stby 3 //Standby da ponte H
+#define led 2
+#define IR 15
 
 char SentidoE = 'F';
 char SentidoD = 'F';
@@ -61,7 +59,7 @@ void setup() {
 
 	Ps3.attach(notify);
 	Ps3.attachOnConnect(onConnect);
-	Ps3.begin("40:F5:20:80:BF:4C");
+	Ps3.begin("08:B6:1F:34:DC:C0");
 
 	Serial.println("Ready.");
 }
